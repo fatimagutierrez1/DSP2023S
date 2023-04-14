@@ -1,0 +1,82 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "1981dc26",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[['{'], [' \"cells\": ['], ['  {'], ['   \"cell_type\": \"code\"', ''], ['   \"execution_count\": 3', ''], ['   \"id\": \"2b425ba1\"', ''], ['   \"metadata\": {}', ''], ['   \"outputs\": ['], ['    {'], ['     \"data\": {'], ['      \"text/plain\": ['], ['       \"(-0.75', ' -0.29619813', ' 0.29619813', ' 0.75)\"'], ['      ]'], ['     }', ''], ['     \"execution_count\": 3', ''], ['     \"metadata\": {}', ''], ['     \"output_type\": \"execute_result\"'], ['    }'], ['   ]', ''], ['   \"source\": ['], ['    \"0.75', ' 0.29619813', ' -0.29619813', ' -0.75\\\\n\"', ''], ['    \"0.29619813', ' 0.11697778', ' -0.11697778', ' -0.29619813\\\\n\"', ''], ['    \"-0.29619813', ' -0.11697778', ' 0.11697778', ' 0.29619813\\\\n\"', ''], ['    \"-0.75', ' -0.29619813', ' 0.29619813', ' 0.75\"'], ['   ]'], ['  }', ''], ['  {'], ['   \"cell_type\": \"code\"', ''], ['   \"execution_count\": null', ''], ['   \"id\": \"1b56d4a8\"', ''], ['   \"metadata\": {}', ''], ['   \"outputs\": []', ''], ['   \"source\": []'], ['  }'], [' ]', ''], [' \"metadata\": {'], ['  \"kernelspec\": {'], ['   \"display_name\": \"Python 3 (ipykernel)\"', ''], ['   \"language\": \"python\"', ''], ['   \"name\": \"python3\"'], ['  }', ''], ['  \"language_info\": {'], ['   \"codemirror_mode\": {'], ['    \"name\": \"ipython\"', ''], ['    \"version\": 3'], ['   }', ''], ['   \"file_extension\": \".py\"', ''], ['   \"mimetype\": \"text/x-python\"', ''], ['   \"name\": \"python\"', ''], ['   \"nbconvert_exporter\": \"python\"', ''], ['   \"pygments_lexer\": \"ipython3\"', ''], ['   \"version\": \"3.10.9\"'], ['  }'], [' }', ''], [' \"nbformat\": 4', ''], [' \"nbformat_minor\": 5'], ['}']]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import csv\n",
+    "with open('homework.csv','r') as inputfile:\n",
+    "        content=list(csv.reader(inputfile))\n",
+    "        print(content)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "0ea93471",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'outputfile' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[12], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mcsv\u001b[39;00m\n\u001b[1;32m----> 2\u001b[0m \u001b[38;5;28;01mwith\u001b[39;00m \u001b[38;5;28mopen\u001b[39m(\u001b[43moutputfile\u001b[49m,\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mw\u001b[39m\u001b[38;5;124m'\u001b[39m) \u001b[38;5;28;01mas\u001b[39;00m outputfile:\n\u001b[0;32m      3\u001b[0m     \u001b[38;5;28;01mfor\u001b[39;00m row \u001b[38;5;129;01min\u001b[39;00m content:\n\u001b[0;32m      4\u001b[0m         outputfile\u001b[38;5;241m.\u001b[39mwrite(\u001b[38;5;124m'\u001b[39m\u001b[38;5;130;01m\\n\u001b[39;00m\u001b[38;5;124m'\u001b[39m)\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'outputfile' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "import csv\n",
+    "with open(outputfile,'w') as outputfile:\n",
+    "    for row in content:\n",
+    "        outputfile.write('\\n')\n",
+    "        for i in range(len(row)):\n",
+    "            outputfile.write('{:>10.3f}'.format(float(row[i])).ljust(10))\n",
+    "            outputfile.write('\\t')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "989cd671",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

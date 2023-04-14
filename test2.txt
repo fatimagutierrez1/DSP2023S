@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-File in the main branch
-=======
-Merge
->>>>>>> test2
